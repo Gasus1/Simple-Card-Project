@@ -17,6 +17,10 @@ img {
 }
 
 /* || GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font: 1.5rem sans-serif;
     min-height: 100vh;
@@ -100,4 +104,79 @@ footer {
     font-size: 2rem;
     margin: 1rem;
     text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+    main {
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+
+    .card {
+        width: min(100%, 400px)
+    }
+
+    .card:last-child {
+        order: -1;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .card {
+        width: min(100%, 325px);
+    }
+
+    .card figure {
+        flex-flow: column-reverse;
+    }
+
+    .card p {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .card {
+        width: min(100%, 400px);
+    }
+
+    .card:nth-child(2) {
+        order: -1;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card {
+        width: min(calc(33% - 1rem), 500px);
+    }
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/5) {
+    nav {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+
+    .card {
+        width: min(calc(33% - 0.25rem), 200px);
+    }
+
+    .card figcaption,
+    .card p {
+        font-size: 1.25rem;
+    }
 }
